@@ -1,5 +1,7 @@
 # suavebootstrapper
 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
 1) run `build.cmd` and it will
   * download latest paket.exe
   * download all packages from paket.dependencies:
