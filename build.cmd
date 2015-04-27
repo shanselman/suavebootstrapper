@@ -14,5 +14,5 @@ if errorlevel 1 (
   exit /b %errorlevel%
 )
 
-// Azure will start this
-//packages\FAKE\tools\FAKE.exe build.fsx %*
+REM Azure will start this
+REM packages\FAKE\tools\FAKE.exe build.fsx %*
