@@ -14,4 +14,5 @@ if errorlevel 1 (
   exit /b %errorlevel%
 )
 
-packages\FAKE\tools\FAKE.exe build.fsx %*
+// Azure will start this
+//packages\FAKE\tools\FAKE.exe build.fsx %*
