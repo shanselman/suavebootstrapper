@@ -27,4 +27,4 @@ let serverConfig =
        bindings = [ HttpBinding.mk HTTP IPAddress.Loopback port ]
     }
  
-startWebServer serverConfig (OK "Hello World!")
+startWebServer serverConfig (OK "Hello World! It's Suave.io on Azure Websites. <a href='https://github.com/shanselman/suavebootstrapper'>So easy to setup. Just click Deploy.</a>")
