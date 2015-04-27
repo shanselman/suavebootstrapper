@@ -5,8 +5,7 @@
   * download all packages from paket.dependencies:
       * FAKE (which is like an fsi)
       * suave
-      * FSharp.Data, FSharp.Charting (for the mini sample)
-  * it starts FAKE:
+  * it starts FAKE
   * and FAKE starts suave at port 8083
  
 or 
