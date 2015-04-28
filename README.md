@@ -1,16 +1,28 @@
-# suavebootstrapper
+# suave.io on Azure
 
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
-1) run `build.cmd` and it will
-  * download latest paket.exe
-  * download all packages from paket.dependencies:
-      * FAKE (which is like an fsi)
-      * suave
-  * it starts FAKE
-  * and FAKE starts suave at port 8083
- 
-or 
+This repository shows how to use [FAKE](https://github.com/fsharp/FAKE), [Paket](https://github.com/fsprojects/Paket) and [KuduSync](https://github.com/projectkudu/KuduSync) to deploy a [suave.io](http://suave.io/) website to Azure.
 
-2) run `build.cmd port=1000` to do the same on port 1000
-  
+## Getting started
+
+* Go to http://azure.microsoft.com/ and create an Azure account
+* Clone this repo and follow the setup steps from https://azuredeploy.net/
+* Congratulations your first suave.io website is running on Azure!
+* (Optional) Look at your Azure management portal and copy the deployment trigger url to the webhooks of your github repo.
+   * This allows you to trigger deployments via `git push origin master`.   
+
+## How is it working?
+
+Whenever you push to Azure the `deploy.cmd` will be run and 
+
+  * it downloads the latest paket.exe and uses it to restore the NuGet packages from the `paket.dependencies`
+  * it uses [KuduSync](https://github.com/projectkudu/KuduSync) to synchronize the changes to your Website
+  * it uses FAKE to run the `build.fsx` script which then starts a [suave.io](https://github.com/SuaveIO/suave) webserver
+
+## Going further
+      
+This is a basic setup and only starts a very small FAKE script on Azure. 
+Feel free to modify the `webserver.fsx` script or you might even want to start a different application from it.
+If you need more NuGet packages then modify the `paket.dependencies` file and run `.paket/paket.exe install`. 
+You can find more information in the [Paket docs](http://fsprojects.github.io/Paket/).
